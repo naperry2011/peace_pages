@@ -3,11 +3,11 @@
 
 :root {
   --background: #F7E8D4;
-  --foreground: #482836;
+  --foreground: #000000;
   --primary: #9C5D73;
   --secondary: #764E5A;
   --accent: #C38D71;
-  --text-dark: #4B3C37;
+  --text-dark: #000000;
   --text-light: #F7E8D4;
   --cream: #F7E8D4;
   --light-cream: #FAF2E8;
@@ -81,4 +81,19 @@ h1, h2, h3, h4, h5, h6 {
 
 .card:hover {
   transform: translateY(-5px);
+}
+
+/* Force book titles to be black with !important */
+.card h3 {
+  color: #000000 !important;
+  font-weight: bold !important;
+}
+
+.card p {
+  color: #000000 !important;
+}
+
+/* Dark text for all headings */
+h1, h2, h3, h4, h5, h6 {
+  color: #000000 !important;
 }

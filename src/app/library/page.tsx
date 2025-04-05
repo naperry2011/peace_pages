@@ -105,7 +105,9 @@ export default function LibraryPage() {
   return (
     <div className="py-8 px-6 md:px-10 bg-[#F7E8D4] min-h-screen">
       <div className="container mx-auto">
-        <h1 className="text-3xl md:text-4xl font-bold text-[#482836] mb-6 font-['Varela_Round',sans-serif]">Book Library</h1>
+        <h1 className="text-4xl md:text-5xl font-bold text-black mb-8 text-center md:text-left font-['Varela_Round',sans-serif] drop-shadow-sm">
+          Book Library
+        </h1>
         
         {/* Search and Filters */}
         <div className="bg-white rounded-lg shadow-md p-6 mb-8">
@@ -122,7 +124,7 @@ export default function LibraryPage() {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
             {/* Age Group Filter */}
             <div>
-              <label className="block text-sm font-medium text-[#482836] mb-1">Age Group</label>
+              <label className="block text-sm font-medium text-black mb-1">Age Group</label>
               <select 
                 className="w-full px-3 py-2 rounded-md border border-[#C38D71] focus:outline-none focus:ring-2 focus:ring-[#9C5D73]"
                 value={selectedAgeGroup}
@@ -137,7 +139,7 @@ export default function LibraryPage() {
             
             {/* Genre Filter */}
             <div>
-              <label className="block text-sm font-medium text-[#482836] mb-1">Genre</label>
+              <label className="block text-sm font-medium text-black mb-1">Genre</label>
               <select 
                 className="w-full px-3 py-2 rounded-md border border-[#C38D71] focus:outline-none focus:ring-2 focus:ring-[#9C5D73]"
                 value={selectedGenre}
@@ -152,7 +154,7 @@ export default function LibraryPage() {
             
             {/* Mood Filter */}
             <div>
-              <label className="block text-sm font-medium text-[#482836] mb-1">Mood</label>
+              <label className="block text-sm font-medium text-black mb-1">Mood</label>
               <select 
                 className="w-full px-3 py-2 rounded-md border border-[#C38D71] focus:outline-none focus:ring-2 focus:ring-[#9C5D73]"
                 value={selectedMood}
@@ -171,28 +173,28 @@ export default function LibraryPage() {
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
           {filteredBooks.length > 0 ? (
             filteredBooks.map(book => (
-              <div key={book.id} className="card hover:shadow-lg">
+              <div key={book.id} className="card hover:shadow-lg bg-white">
                 <div className="h-56 relative">
                   <div className="absolute inset-0 bg-[#E6CCB2] flex items-center justify-center">
                     {/* Placeholder for book covers */}
                     <span className="text-[#9C5D73] text-6xl">📚</span>
                   </div>
                 </div>
-                <div className="p-4">
-                  <h3 className="font-bold text-lg text-[#482836] mb-1">{book.title}</h3>
-                  <p className="text-[#8A5A44] text-sm mb-2">{book.author}</p>
+                <div className="p-4 bg-white">
+                  <h3 className="font-bold text-lg text-[#000000] mb-1 font-['Varela_Round',sans-serif]">{book.title}</h3>
+                  <p className="text-[#000000] text-sm mb-2 font-medium">{book.author}</p>
                   <div className="flex flex-wrap gap-2 mb-3">
-                    <span className="text-xs bg-[#F7E8D4] text-[#8A5A44] px-2 py-1 rounded-full">
+                    <span className="text-xs bg-[#F7E8D4] text-black px-2 py-1 rounded-full font-semibold border border-[#C38D71]">
                       Ages {book.ageGroup}
                     </span>
-                    <span className="text-xs bg-[#EFD9C3] text-[#8A5A44] px-2 py-1 rounded-full">
+                    <span className="text-xs bg-[#EFD9C3] text-black px-2 py-1 rounded-full font-semibold border border-[#C38D71]">
                       {book.genre}
                     </span>
-                    <span className="text-xs bg-[#E6CCB2] text-[#8A5A44] px-2 py-1 rounded-full">
+                    <span className="text-xs bg-[#E6CCB2] text-black px-2 py-1 rounded-full font-semibold border border-[#C38D71]">
                       {book.mood}
                     </span>
                   </div>
-                  <Link href={`/book/${book.id}`} className="block text-center text-[#F7E8D4] bg-[#9C5D73] rounded-full py-2 hover:bg-[#764E5A] transition-colors">
+                  <Link href={`/book/${book.id}`} className="block text-center text-white bg-[#764E5A] rounded-full py-2 hover:bg-[#5D3A45] transition-colors font-bold shadow-sm">
                     View Book
                   </Link>
                 </div>
@@ -200,7 +202,7 @@ export default function LibraryPage() {
             ))
           ) : (
             <div className="col-span-full text-center py-12">
-              <p className="text-[#482836] text-lg">No books match your filters. Try adjusting your criteria.</p>
+              <p className="text-black text-lg font-bold">No books match your filters. Try adjusting your criteria.</p>
             </div>
           )}
         </div>

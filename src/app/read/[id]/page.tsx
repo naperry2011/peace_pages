@@ -92,8 +92,8 @@ const Page = ({ pageNumber, content, background }: { pageNumber: number, content
   return (
     <div className={`page ${background} h-full flex flex-col justify-center items-center p-8 shadow-inner`}>
       <div className="text-center">
-        <p className="text-lg md:text-xl lg:text-2xl text-[#4B3C37] leading-relaxed font-['Quicksand',sans-serif]">{content}</p>
-        <div className="mt-6 text-sm text-[#8A5A44]">Page {pageNumber}</div>
+        <p className="text-lg md:text-xl lg:text-2xl text-black leading-relaxed font-['Quicksand',sans-serif]">{content}</p>
+        <div className="mt-6 text-sm text-black">Page {pageNumber}</div>
       </div>
     </div>
   );
@@ -104,9 +104,9 @@ const CoverPage = ({ title, author }: { title: string, author: string }) => {
   return (
     <div className="cover-page bg-[#E6CCB2] h-full flex flex-col justify-center items-center p-8 shadow-inner">
       <div className="text-center">
-        <h1 className="text-3xl md:text-4xl font-bold text-[#482836] mb-4 font-['Varela_Round',sans-serif]">{title}</h1>
-        <p className="text-xl text-[#8A5A44]">by {author}</p>
-        <div className="mt-16 text-sm text-[#9C5D73]">Open to begin reading</div>
+        <h1 className="text-3xl md:text-4xl font-bold text-black mb-4 font-['Varela_Round',sans-serif]">{title}</h1>
+        <p className="text-xl text-black">by {author}</p>
+        <div className="mt-16 text-sm text-black">Open to begin reading</div>
       </div>
     </div>
   );
@@ -117,9 +117,9 @@ const BackCover = ({ title }: { title: string }) => {
   return (
     <div className="back-cover bg-[#E6CCB2] h-full flex flex-col justify-center items-center p-8 shadow-inner">
       <div className="text-center">
-        <p className="text-xl text-[#9C5D73] mb-4">The End</p>
-        <h2 className="text-2xl font-bold text-[#482836] font-['Varela_Round',sans-serif]">{title}</h2>
-        <div className="mt-16 text-sm text-[#8A5A44]">Thank you for reading!</div>
+        <h2 className="text-2xl font-bold text-black mb-4 font-['Varela_Round',sans-serif]">The End</h2>
+        <p className="text-lg text-black">{title}</p>
+        <div className="mt-16 text-sm text-black">Thank you for reading!</div>
       </div>
     </div>
   );
@@ -173,11 +173,11 @@ export default function ReadPage() {
   if (!book) {
     return (
       <div className="min-h-screen py-12 px-6 flex flex-col items-center justify-center bg-[#F7E8D4]">
-        <h1 className="text-2xl font-bold text-[#482836] mb-4 font-['Varela_Round',sans-serif]">Book Not Found</h1>
-        <p className="text-[#8A5A44] mb-6">We couldn&apos;t find the book you&apos;re looking for.</p>
+        <h1 className="text-2xl font-bold text-black mb-4 font-['Varela_Round',sans-serif]">Book Not Found</h1>
+        <p className="text-black mb-6">We couldn&apos;t find the book you&apos;re looking for.</p>
         <Link 
           href="/library" 
-          className="px-4 py-2 bg-[#9C5D73] text-[#F7E8D4] rounded-full hover:bg-[#764E5A] transition-colors"
+          className="px-4 py-2 bg-black text-white rounded-full hover:bg-gray-800 transition-colors"
         >
           Return to Library
         </Link>
@@ -189,13 +189,13 @@ export default function ReadPage() {
     <div className="py-8 px-4 min-h-screen bg-[#F7E8D4] flex flex-col">
       {/* Top Navigation */}
       <div className="container mx-auto mb-6 flex justify-between items-center">
-        <Link href={`/book/${book.id}`} className="inline-flex items-center text-[#9C5D73] hover:underline">
+        <Link href={`/book/${book.id}`} className="inline-flex items-center text-black hover:underline">
           <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 mr-1" viewBox="0 0 20 20" fill="currentColor">
             <path fillRule="evenodd" d="M9.707 16.707a1 1 0 01-1.414 0l-6-6a1 1 0 010-1.414l6-6a1 1 0 011.414 1.414L5.414 9H17a1 1 0 110 2H5.414l4.293 4.293a1 1 0 010 1.414z" clipRule="evenodd" />
           </svg>
           Back to Book Details
         </Link>
-        <div className="text-[#8A5A44] font-['Quicksand',sans-serif]">
+        <div className="text-black font-['Quicksand',sans-serif]">
           Page {pageNumber} of {book.pages.length + 1}
         </div>
       </div>

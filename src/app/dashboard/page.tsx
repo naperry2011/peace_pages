@@ -1,7 +1,6 @@
 'use client';
 
 import { useState } from 'react';
-import Link from 'next/link';
 
 export default function DashboardPage() {
   // This will be authenticated with Supabase later
@@ -113,7 +112,7 @@ export default function DashboardPage() {
             
             <div className="mt-8 text-center text-sm text-gray-500">
               <p>This dashboard will be connected to Supabase in the next phase.</p>
-              <p>You'll be able to add, edit, and delete books with image uploads.</p>
+              <p>You&apos;ll be able to add, edit, and delete books with image uploads.</p>
             </div>
           </div>
         )}

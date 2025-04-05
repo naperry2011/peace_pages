@@ -1,6 +1,6 @@
 'use client';
 
-import { useParams, useRouter } from 'next/navigation';
+import { useParams } from 'next/navigation';
 import Link from 'next/link';
 import { useState, useEffect } from 'react';
 
@@ -56,12 +56,24 @@ const books = [
   }
 ];
 
+interface Book {
+  id: string;
+  title: string;
+  author: string;
+  coverUrl: string;
+  ageGroup: string;
+  genre: string;
+  mood: string;
+  description: string;
+  readingTime: string;
+  pages: number;
+}
+
 export default function BookDetailPage() {
   const params = useParams();
-  const router = useRouter();
   const bookId = params.id as string;
   
-  const [book, setBook] = useState<any>(null);
+  const [book, setBook] = useState<Book | null>(null);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
@@ -87,7 +99,7 @@ export default function BookDetailPage() {
     return (
       <div className="min-h-screen py-12 px-6 flex flex-col items-center justify-center">
         <h1 className="text-2xl font-bold text-gray-800 mb-4">Book Not Found</h1>
-        <p className="text-gray-600 mb-6">We couldn't find the book you're looking for.</p>
+        <p className="text-gray-600 mb-6">We couldn&apos;t find the book you&apos;re looking for.</p>
         <Link 
           href="/library" 
           className="px-4 py-2 bg-indigo-600 text-white rounded-lg hover:bg-indigo-700 transition-colors"

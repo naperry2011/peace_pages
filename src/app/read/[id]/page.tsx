@@ -80,6 +80,13 @@ interface PageEvent {
   data: number;
 }
 
+interface PageFlip {
+  pageFlip: () => {
+    flipNext: () => void;
+    flipPrev: () => void;
+  };
+}
+
 // Page component for the flipbook
 const Page = ({ pageNumber, content, background }: { pageNumber: number, content: string, background: string }) => {
   return (
@@ -126,7 +133,7 @@ export default function ReadPage() {
   const [loading, setLoading] = useState(true);
   const [pageNumber, setPageNumber] = useState(0);
   
-  const flipBookRef = useRef<any>(null);
+  const flipBookRef = useRef<PageFlip | null>(null);
 
   useEffect(() => {
     // In a real app, this would be a database query
@@ -230,7 +237,7 @@ export default function ReadPage() {
             </div>
             
             {/* Book Pages */}
-            {book.pages.map((page: any, index: number) => (
+            {book.pages.map((page: BookPage, index: number) => (
               <div key={index}>
                 <Page 
                   pageNumber={index + 1} 

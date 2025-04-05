@@ -40,7 +40,7 @@ export default function Home() {
         <div className="absolute inset-0 opacity-10 lofi-pattern"></div>
         <div className="container mx-auto px-6 py-16 flex flex-col md:flex-row items-center z-10">
           <div className="md:w-1/2 text-center md:text-left mb-10 md:mb-0">
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-[#F7E8D4] mb-4 font-['Varela_Round',sans-serif] drop-shadow-md">
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-4 font-['Varela_Round',sans-serif] drop-shadow-md">
               Peace & Pages
             </h1>
             <p className="text-xl md:text-2xl text-white mb-8 max-w-2xl drop-shadow-sm">

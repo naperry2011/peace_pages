@@ -83,7 +83,7 @@ h1, h2, h3, h4, h5, h6 {
   transform: translateY(-5px);
 }
 
-/* Force book titles to be black with !important */
+/* Dark text for book cards but white for headers on dark backgrounds */
 .card h3 {
   color: #000000 !important;
   font-weight: bold !important;
@@ -93,7 +93,89 @@ h1, h2, h3, h4, h5, h6 {
   color: #000000 !important;
 }
 
-/* Dark text for all headings */
-h1, h2, h3, h4, h5, h6 {
+/* Target the header/navbar text to be white */
+header h1, 
+header h2, 
+header a, 
+header p,
+nav h1,
+nav h2,
+nav a,
+nav p,
+[class*="bg-[#482836]"] h1,
+[class*="bg-[#482836]"] h2,
+[class*="bg-[#482836]"] p,
+[class*="bg-purple-"] h1,
+[class*="bg-purple-"] p,
+.bg-\[#482836\] *,
+.bg-purple-900 *,
+section[class*="bg-[#482836]"] h1,
+section[class*="bg-[#482836]"] h2,
+h1.text-black,
+div[class*="bg-[#482836]"] h1,
+section.bg-\[#482836\] h1 {
+  color: white !important;
+}
+
+/* Default headings to black (except in specific containers) */
+h1:not(header *):not(nav *), 
+h2:not(header *):not(nav *), 
+h3:not(header *):not(nav *):not(.card *), 
+h4:not(header *):not(nav *), 
+h5:not(header *):not(nav *), 
+h6:not(header *):not(nav *) {
   color: #000000 !important;
+}
+
+/* Override specifically for main header */
+h1:has(+ p):first-child {
+  color: white !important;
+}
+
+/* Additional specific selectors for headers on dark backgrounds */
+.bg-\[#482836\] h1,
+.bg-\[#482836\] h2,
+.bg-\[#482836\] p,
+.bg-\[#764E5A\] h1,
+.bg-\[#764E5A\] h2,
+.bg-\[#764E5A\] p {
+  color: white !important;
+}
+
+/* Force text to be white on specific colored backgrounds */
+[style*="background-color:#482836"] *,
+[class*="bg-[#482836]"] *,
+[class*="bg-[#764E5A]"] *,
+section.bg-\[#482836\] *,
+section.bg-\[#764E5A\] * {
+  color: white !important;
+}
+
+/* Target specific sections with dark backgrounds by their content */
+section:has(h2:contains("Ready to Begin")) *,
+section:has(h2:contains("Our Mission")) * {
+  color: white !important;
+}
+
+/* Ensure book cards still have black text */
+.card h3,
+.card p,
+.card span,
+section.bg-\[#F7E8D4\] h2,
+section.bg-\[#F7E8D4\] p,
+section.bg-\[#F7E8D4\] a,
+section.bg-\[#F7E8D4\] span {
+  color: black !important;
+}
+
+/* Direct targeting of the hero section elements */
+section.min-h-\[600px\] h1,
+section.min-h-\[600px\] p {
+  color: white !important;
+}
+
+/* Target footer sections */
+section.py-12.bg-\[#482836\] h2,
+section.py-12.bg-\[#482836\] p {
+  color: white !important;
 }

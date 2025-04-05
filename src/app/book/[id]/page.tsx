@@ -89,20 +89,20 @@ export default function BookDetailPage() {
 
   if (loading) {
     return (
-      <div className="min-h-screen flex items-center justify-center">
-        <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-indigo-500"></div>
+      <div className="min-h-screen flex items-center justify-center bg-[#F7E8D4]">
+        <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-[#9C5D73]"></div>
       </div>
     );
   }
 
   if (!book) {
     return (
-      <div className="min-h-screen py-12 px-6 flex flex-col items-center justify-center">
-        <h1 className="text-2xl font-bold text-gray-800 mb-4">Book Not Found</h1>
-        <p className="text-gray-600 mb-6">We couldn&apos;t find the book you&apos;re looking for.</p>
+      <div className="min-h-screen py-12 px-6 flex flex-col items-center justify-center bg-[#F7E8D4]">
+        <h1 className="text-2xl font-bold text-[#482836] mb-4 font-['Varela_Round',sans-serif]">Book Not Found</h1>
+        <p className="text-[#8A5A44] mb-6">We couldn&apos;t find the book you&apos;re looking for.</p>
         <Link 
           href="/library" 
-          className="px-4 py-2 bg-indigo-600 text-white rounded-lg hover:bg-indigo-700 transition-colors"
+          className="px-4 py-2 bg-[#9C5D73] text-[#F7E8D4] rounded-full hover:bg-[#764E5A] transition-colors"
         >
           Return to Library
         </Link>
@@ -111,9 +111,9 @@ export default function BookDetailPage() {
   }
 
   return (
-    <div className="py-12 px-6 md:px-10 bg-gray-50 min-h-screen">
+    <div className="py-12 px-6 md:px-10 bg-[#F7E8D4] min-h-screen">
       <div className="container mx-auto">
-        <Link href="/library" className="inline-flex items-center text-indigo-600 mb-8 hover:underline">
+        <Link href="/library" className="inline-flex items-center text-[#9C5D73] mb-8 hover:underline">
           <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 mr-1" viewBox="0 0 20 20" fill="currentColor">
             <path fillRule="evenodd" d="M9.707 16.707a1 1 0 01-1.414 0l-6-6a1 1 0 010-1.414l6-6a1 1 0 011.414 1.414L5.414 9H17a1 1 0 110 2H5.414l4.293 4.293a1 1 0 010 1.414z" clipRule="evenodd" />
           </svg>
@@ -123,49 +123,49 @@ export default function BookDetailPage() {
         <div className="bg-white rounded-lg shadow-md overflow-hidden">
           <div className="md:flex">
             {/* Book Cover (Left) */}
-            <div className="md:w-1/3 bg-indigo-100 flex items-center justify-center p-8">
+            <div className="md:w-1/3 bg-[#E6CCB2] flex items-center justify-center p-8">
               <div className="w-full max-w-xs aspect-[3/4] bg-white shadow-lg rounded-md flex items-center justify-center">
                 {/* Placeholder for book cover */}
-                <span className="text-indigo-300 text-8xl">📚</span>
+                <span className="text-[#9C5D73] text-8xl">📚</span>
               </div>
             </div>
             
             {/* Book Details (Right) */}
             <div className="md:w-2/3 p-6 md:p-8">
-              <h1 className="text-3xl font-bold text-gray-800 mb-2">{book.title}</h1>
-              <p className="text-xl text-gray-600 mb-6">by {book.author}</p>
+              <h1 className="text-3xl font-bold text-[#482836] mb-2 font-['Varela_Round',sans-serif]">{book.title}</h1>
+              <p className="text-xl text-[#8A5A44] mb-6">by {book.author}</p>
               
               <div className="flex flex-wrap gap-2 mb-6">
-                <span className="text-sm bg-indigo-50 text-indigo-700 px-3 py-1 rounded-full">
+                <span className="text-sm bg-[#F7E8D4] text-[#8A5A44] px-3 py-1 rounded-full">
                   Ages {book.ageGroup}
                 </span>
-                <span className="text-sm bg-purple-50 text-purple-700 px-3 py-1 rounded-full">
+                <span className="text-sm bg-[#EFD9C3] text-[#8A5A44] px-3 py-1 rounded-full">
                   {book.genre}
                 </span>
-                <span className="text-sm bg-blue-50 text-blue-700 px-3 py-1 rounded-full">
+                <span className="text-sm bg-[#E6CCB2] text-[#8A5A44] px-3 py-1 rounded-full">
                   {book.mood}
                 </span>
               </div>
               
               <div className="mb-8">
-                <h2 className="text-xl font-semibold text-gray-800 mb-2">About This Book</h2>
-                <p className="text-gray-600 leading-relaxed">{book.description}</p>
+                <h2 className="text-xl font-semibold text-[#482836] mb-2 font-['Varela_Round',sans-serif]">About This Book</h2>
+                <p className="text-[#4B3C37] leading-relaxed">{book.description}</p>
               </div>
               
               <div className="grid grid-cols-2 gap-4 mb-8">
-                <div className="bg-gray-50 p-4 rounded-lg">
-                  <h3 className="font-medium text-gray-800 mb-1">Reading Time</h3>
-                  <p className="text-gray-600">{book.readingTime}</p>
+                <div className="bg-[#FAF2E8] p-4 rounded-lg">
+                  <h3 className="font-medium text-[#482836] mb-1">Reading Time</h3>
+                  <p className="text-[#8A5A44]">{book.readingTime}</p>
                 </div>
-                <div className="bg-gray-50 p-4 rounded-lg">
-                  <h3 className="font-medium text-gray-800 mb-1">Pages</h3>
-                  <p className="text-gray-600">{book.pages} pages</p>
+                <div className="bg-[#FAF2E8] p-4 rounded-lg">
+                  <h3 className="font-medium text-[#482836] mb-1">Pages</h3>
+                  <p className="text-[#8A5A44]">{book.pages} pages</p>
                 </div>
               </div>
               
               <Link 
                 href={`/read/${book.id}`}
-                className="inline-block px-6 py-3 bg-indigo-600 text-white font-medium rounded-lg hover:bg-indigo-700 transition-colors"
+                className="inline-block px-6 py-3 bg-[#9C5D73] text-[#F7E8D4] font-medium rounded-full hover:bg-[#764E5A] transition-colors shadow-md"
               >
                 Start Reading
               </Link>
